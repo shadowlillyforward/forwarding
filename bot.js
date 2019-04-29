@@ -27,6 +27,17 @@ bot.on("message", async function(message) {
 				}
 			}
 		}
+		
+		else if(message.channel.id == "572450667696881681") {
+			if(message.embeds.length > 0) {
+					if(message.reactions.first() == null) {
+						await sleep(4000);
+					}
+					else {
+						message.react(message.reactions.first().emoji);
+					}
+			}
+		}
 	}
 });
 
