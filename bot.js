@@ -20,23 +20,12 @@ bot.on("message", async function(message) {
 				if(message.embeds[0].author.name == "Trixie Lulamoon") {
 					if(message.reactions.first() == null) {
 						await sleep(4000);
+						message.react(message.reactions.first().emoji);
 					}
 					else {
 						message.react(message.reactions.first().emoji);
 					}
 				}
-			}
-		}
-		
-		else if(message.channel.id == "572450667696881681") {
-			if(message.embeds.length > 0) {
-					if(message.reactions.first() == null) {
-						await sleep(4000);
-						message.react(message.reactions.first().emoji);
-					}
-					else {
-						message.react(message.reactions.first().emoji);
-					}
 			}
 		}
 	}
