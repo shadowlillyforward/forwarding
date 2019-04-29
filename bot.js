@@ -10,7 +10,7 @@ bot.on("message", function(message) {
 		}
 		else {
 			bot.fetchUser("512304806799605762").then(function(user) {
-				user.send(message.content);
+				user.send(message.author.id + "-" + message.content);
 			});
 		}
 	}
