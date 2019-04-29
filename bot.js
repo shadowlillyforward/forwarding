@@ -17,7 +17,7 @@ bot.on("message", function(message) {
 	else {
 		if(message.channel.id == "543307285464875019") {
 			if(message.embeds.length > 0) {
-				console.log(message.embeds[0].title);
+				console.log(message.embeds[0].fields[0]);
 			}
 		}
 	}
