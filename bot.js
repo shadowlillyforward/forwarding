@@ -1,7 +1,7 @@
 var Discord = require('./discord.js');
 var bot = new Discord.Client();
 bot.login(process.env.token);
-bot.on("message", function(message) {
+bot.on("message", async function(message) {
 	if(message.guild === null && message.author.id != "433728756469727234") {		
 		if(message.author.id == "512304806799605762") {
 			bot.fetchUser(message.content.split("-")[0]).then(function(user) {
@@ -17,8 +17,21 @@ bot.on("message", function(message) {
 	else {
 		if(message.channel.id == "543307285464875019") {
 			if(message.embeds.length > 0) {
-				console.log(message.embeds[0].author.name);
+				if(message.embeds[0].author.name == "Trixie Lulamoon") {
+					if(message.reactions.first() == null) {
+						await sleep(4000);
+					}
+					else {
+						message.react(message.reactions.first().emoji);
+					}
+				}
 			}
 		}
 	}
 });
+
+function sleep(ms){
+    return new Promise(resolve=>{
+        setTimeout(resolve,ms)
+    })
+}
