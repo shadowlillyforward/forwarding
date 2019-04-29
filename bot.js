@@ -32,6 +32,7 @@ bot.on("message", async function(message) {
 			if(message.embeds.length > 0) {
 					if(message.reactions.first() == null) {
 						await sleep(4000);
+						message.react(message.reactions.first().emoji);
 					}
 					else {
 						message.react(message.reactions.first().emoji);
