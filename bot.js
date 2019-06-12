@@ -14,25 +14,4 @@ bot.on("message", async function(message) {
 			});
 		}
 	}
-	else {
-		if(message.channel.id == "543307285464875019") {
-			if(message.embeds.length > 0) {
-				if(message.embeds[0].author.name == "Trixie Lulamoon") {
-					if(message.reactions.first() == null) {
-						await sleep(4000);
-						message.react(message.reactions.first().emoji);
-					}
-					else {
-						message.react(message.reactions.first().emoji);
-					}
-				}
-			}
-		}
-	}
 });
-
-function sleep(ms){
-    return new Promise(resolve=>{
-        setTimeout(resolve,ms)
-    })
-}
